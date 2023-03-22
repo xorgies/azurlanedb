@@ -1,0 +1,10 @@
+{
+    "azurLane": [
+        {
+            "clase" : "BB/BC/BBV/BM", 
+            "barcos" : [
+                { "nombre" : "Friedrich der Große", "tier" : "Tier EX", "img" : "", "rareza" : "", "badges" : [] }
+            ] 
+        }
+    ]
+}
