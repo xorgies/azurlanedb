@@ -2,5 +2,27 @@
 
 {% block content %}
     <h1>Personajes</h1>
+    <table border="1px solid white">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Clase</th>
+                <th>Tier</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tipo in jsonData['AzurLane'] %}
+                {% set clase = tipo['clase'] %}
+                {% set barcos = tipo['barcos'] %}
+                {% for barco in barcos %}
+            <tr>
+                <td>{{barco["nombre"]}}</td>
+                <td>{{clase}}</td>
+                <td>{{barco["tier"]}}</td>
+            </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
     <h2>{{ jsonData['AzurLane'][0]['clase'] }}</h2>
 {% endblock %}
