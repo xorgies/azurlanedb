@@ -1,2 +1,2 @@
-datos/img/*
-datos/datos.json
+datos/*
+web/static/datos
