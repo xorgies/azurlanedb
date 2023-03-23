@@ -45,7 +45,7 @@ def sacarDatos(url,urlBase):
             print("-----------------------")
             print("Barco: "+nombre)
 
-            #TODO: badges
+            # badges
             divBadges = divBarco.findChildren("div",recursive=False)[0]
             imgBadges = divBadges.find_all("img")
             badges = []
