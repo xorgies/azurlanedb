@@ -2,3 +2,32 @@ body{
     background-color: black;
     color:azure;
 }
+
+.icono-barco{
+    width: 75px;
+}
+
+.badge-barco{
+    max-height: 20px;
+}
+
+/* rarity */
+.ship-rarity-padding {
+    padding: 4px;
+}
+.rarity-decisive, .rarity-ultra-rare {
+    background: linear-gradient(120deg,#fbffca,#baffbf,#a7efff,#ffabff);
+}
+.rarity-priority,.rarity-super-rare {
+    background: #ee9;
+}
+.rarity-elite {
+    background: #c4adff;
+}
+.rarity-rare {
+    background: #9fe8ff;
+}
+/*.rarity-normal {
+
+}*/
+/* rarity */

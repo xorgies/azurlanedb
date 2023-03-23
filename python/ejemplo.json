@@ -3,7 +3,15 @@
         {
             "clase" : "BB/BC/BBV/BM", 
             "barcos" : [
-                { "nombre" : "Friedrich der Große", "tier" : "Tier EX", "img" : "", "rareza" : "", "badges" : [] }
+                { 
+                    "nombre" : "Friedrich der Große", 
+                    "tier" : "Tier EX", 
+                    "img" : "image.png", 
+                    "rareza" : "css class", 
+                    "badges" : [
+                        ["data...","tooltip"]
+                    ] 
+                }
             ] 
         }
     ]

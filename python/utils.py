@@ -45,16 +45,32 @@ def sacarDatos(url,urlBase):
             print("-----------------------")
             print("Barco: "+nombre)
 
-            # badges
+            #TODO: badges
+            divBadges = divBarco.findChildren("div",recursive=False)[0]
+            imgBadges = divBadges.find_all("img")
+            badges = []
+            if len(imgBadges)>0:
+                for imgBadge in imgBadges:
+                    badge = []
+                    badge.append(imgBadge["src"])
+                    badge.append(imgBadge["data-tip"])
+
+                    badges.append(badge)
 
             # imagen barco
-            imagen = divBarco.find("img",recursive=False)["src"]
+            imagenTag = divBarco.find("img",recursive=False)
+            imagen = imagenTag["src"]
             imagenNombre = imagen.split("/")[-1]
             download_image(urlBase+urllib.parse.quote(imagen),imagenNombre)
+
+            # rareza
+            rareza = imagenTag.get_attribute_list('class')[-1]
 
             barco["nombre"] = nombre
             barco["tier"] = tier
             barco["imagen"] = imagenNombre
+            barco["rareza"] = rareza
+            barco["badges"] = badges
 
             respuesta["barcos"].append(barco)
             

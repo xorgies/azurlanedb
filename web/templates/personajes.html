@@ -5,9 +5,11 @@
     <table id="dataTable" class="table table-dark table-striped table-hover table-bordered">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Clase</th>
-                <th>Tier</th>
+                <th class="text-center">Imagen</th>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Clase</th>
+                <th class="text-center">Tier</th>
+                <th class="text-center">Badges</th>
             </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -16,9 +18,15 @@
                 {% set barcos = tipo['barcos'] %}
                 {% for barco in barcos %}
             <tr>
+                <td><img class="rounded mx-auto d-block icono-barco ship-rarity-padding {{barco['rareza']}}" src="{{url_for('static', filename='datos/img/'+barco['imagen'])}}"></td>
                 <td>{{barco["nombre"]}}</td>
                 <td>{{clase}}</td>
                 <td>{{barco["tier"]}}</td>
+                <td>
+                    {% for badge in barco["badges"] %}
+                        <img class="badge-barco mx-auto d-block" src="{{ badge[0] }}" title="{{ badge[1] }}">
+                    {% endfor %}
+                </td>
             </tr>
                 {% endfor %}
             {% endfor %}

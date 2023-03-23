@@ -22,6 +22,9 @@
 
 # attribute
 # link_url = link["href"]
+# div.find('p').attrs['class']
+# item.p.attrs.get("class")[0]
+# p.get_attribute_list('class')
 
 # json
 # d = {}
