@@ -62,5 +62,5 @@ def sacarDatos(url,urlBase):
     return respuesta
 
 def download_image(url, file_name):
-    full_path = "datos/img/" + file_name
+    full_path = "web/static/datos/img/" + file_name
     urllib.request.urlretrieve(url, full_path)

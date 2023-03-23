@@ -16,5 +16,5 @@ for index,page in enumerate(pages):
     jsonDatos["AzurLane"].append(utils.sacarDatos(url + page,urlBase))
 
 print(json.dumps(jsonDatos))
-with open("datos/datos.json", "w") as write_file:
+with open("web/static/datos/datos.json", "w") as write_file:
     json.dump(jsonDatos, write_file, indent=4, sort_keys=True)
