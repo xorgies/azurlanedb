@@ -16,6 +16,10 @@ def personajes():
 
     return render_template('personajes.html', jsonData=data)
 
+@app.route('/casar')
+def marriage():
+    return render_template('marriage.html')
+
 if __name__ == '__main__':
     # PRO
     # app.run()
