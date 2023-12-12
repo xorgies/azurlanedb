@@ -14,7 +14,7 @@ def sacarDatos(url,urlBase):
     soup = BeautifulSoup(response.html.raw_html, "html.parser")
 
     # tipo de barco
-    tipoBarco = soup.find_all("a", class_="active nav-link")[1].text
+    tipoBarco = soup.find_all("a", class_="active nav-link")[0].text
     respuesta["clase"] = tipoBarco
 
     respuesta["barcos"] = []
@@ -58,7 +58,7 @@ def sacarDatos(url,urlBase):
                     badges.append(badge)
 
             # imagen barco
-            imagenTag = divBarco.find("img",recursive=False)
+            imagenTag = divBarco.find("div",class_="img-raised").find("img")
             imagen = imagenTag["src"]
             imagenNombre = imagen.split("/")[-1]
             download_image(urlBase+urllib.parse.quote(imagen),imagenNombre)
